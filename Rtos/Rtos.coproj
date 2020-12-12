@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Project version="2G - 1.7.8" name="Rtos">
+  <Target name="Rtos" isCurrent="1">
+    <Device manufacturerId="9" manufacturerName="ST" chipId="520" chipName="STM32F303VC" boardId="" boardName=""/>
+    <BuildOption>
+      <Compile>
+        <Option name="OptimizationLevel" value="0"/>
+        <Option name="UseFPU" value="0"/>
+        <Option name="UserEditCompiler" value=""/>
+        <Option name="SupportCPlusplus" value="0"/>
+        <Option name="FPU" value="2"/>
+        <Includepaths>
+          <Includepath path="."/>
+        </Includepaths>
+        <DefinedSymbols>
+          <Define name="STM32F303VC"/>
+          <Define name="STM32F30X"/>
+          <Define name="__FPU_USED"/>
+        </DefinedSymbols>
+      </Compile>
+      <Link useDefault="0">
+        <Option name="DiscardUnusedSection" value="0"/>
+        <Option name="UserEditLinkder" value=""/>
+        <Option name="UseMemoryLayout" value="1"/>
+        <Option name="nostartfiles" value="1"/>
+        <Option name="LTO" value="0"/>
+        <Option name="IsNewStartupCode" value="1"/>
+        <Option name="Library" value="Not use C Library"/>
+        <LinkedLibraries/>
+        <MemoryAreas debugInFlashNotRAM="1">
+          <Memory name="IROM1" type="ReadOnly" size="0x00040000" startValue="0x08000000"/>
+          <Memory name="IRAM1" type="ReadWrite" size="0x0000A000" startValue="0x20000000"/>
+          <Memory name="IROM2" type="ReadOnly" size="" startValue=""/>
+          <Memory name="IRAM2" type="ReadWrite" size="0x00002000" startValue="0x10000000"/>
+        </MemoryAreas>
+        <LocateLinkFile path="d:/coide/configuration/programdata/rtos/link.ld" type="0"/>
+      </Link>
+      <Output>
+        <Option name="OutputFileType" value="0"/>
+        <Option name="Path" value="./"/>
+        <Option name="Name" value="Rtos"/>
+        <Option name="HEX" value="1"/>
+        <Option name="BIN" value="1"/>
+      </Output>
+      <User>
+        <UserRun name="Run#1" type="Before" checked="0" value=""/>
+        <UserRun name="Run#1" type="After" checked="0" value=""/>
+      </User>
+    </BuildOption>
+    <DebugOption>
+      <Option name="org.coocox.codebugger.gdbjtag.core.adapter" value="ST-Link"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.debugMode" value="SWD"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.clockDiv" value="1M"/>
+      <Option name="org.coocox.codebugger.gdbjtag.corerunToMain" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jlinkgdbserver" value=""/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.userDefineGDBScript" value=""/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.targetEndianess" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jlinkResetMode" value="Type 0: Normal"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.resetMode" value="SYSRESETREQ"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ifSemihost" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ifCacheRom" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ipAddress" value="127.0.0.1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.portNumber" value="2009"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.autoDownload" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.verify" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.downloadFuction" value="Erase Effected"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.defaultAlgorithm" value="STM32F3xx_256.elf"/>
+    </DebugOption>
+    <ExcludeFile/>
+  </Target>
+  <Components path="./">
+    <Component id="54" name="M4 CMSIS Core" path="" type="2"/>
+    <Component id="1205" name="cmsis_boot" path="" type="2"/>
+    <Component id="1206" name="RCC" path="" type="2"/>
+    <Component id="1207" name="GPIO" path="" type="2"/>
+    <Component id="1214" name="EXTI" path="" type="2"/>
+    <Component id="1216" name="I2C" path="" type="2"/>
+    <Component id="1220" name="PWR" path="" type="2"/>
+    <Component id="1222" name="SPI" path="" type="2"/>
+    <Component id="1223" name="SYSCFG" path="" type="2"/>
+    <Component id="1224" name="TIM" path="" type="2"/>
+    <Component id="1225" name="USART" path="" type="2"/>
+    <Component id="1226" name="MISC" path="" type="2"/>
+    <Component id="1228" name="stm32303c_eval" path="" type="2"/>
+  </Components>
+  <Files>
+    <File name="FreeRTOS/Include/timers.h" path="FreeRTOS/Include/timers.h" type="1"/>
+    <File name="cmsis_lib/include/stm32f30x_gpio.h" path="cmsis_lib/include/stm32f30x_gpio.h" type="1"/>
+    <File name="cmsis_lib/include/stm32f30x_pwr.h" path="cmsis_lib/include/stm32f30x_pwr.h" type="1"/>
+    <File name="FreeRTOS/Include/atomic.h" path="FreeRTOS/Include/atomic.h" type="1"/>
+    <File name="FreeRTOS/Include/deprecated_definitions.h" path="FreeRTOS/Include/deprecated_definitions.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f30x_pwr.c" path="cmsis_lib/source/stm32f30x_pwr.c" type="1"/>
+    <File name="FreeRTOS/Source/queue.c" path="FreeRTOS/Source/queue.c" type="1"/>
+    <File name="FreeRTOS/Source/tasks.c" path="FreeRTOS/Source/tasks.c" type="1"/>
+    <File name="cmsis_lib/include/stm32f30x_exti.h" path="cmsis_lib/include/stm32f30x_exti.h" type="1"/>
+    <File name="cmsis_boot" path="" type="2"/>
+    <File name="FreeRTOS/Include/FreeRTOS.h" path="FreeRTOS/Include/FreeRTOS.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f30x_exti.c" path="cmsis_lib/source/stm32f30x_exti.c" type="1"/>
+    <File name="cmsis_boot/startup/startup_stm32f30x.S" path="cmsis_boot/startup/startup_stm32f30x.S" type="1"/>
+    <File name="cmsis_boot/startup" path="" type="2"/>
+    <File name="cmsis/core_cm4_simd.h" path="cmsis/core_cm4_simd.h" type="1"/>
+    <File name="cmsis/core_cmFunc.h" path="cmsis/core_cmFunc.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f30x_misc.c" path="cmsis_lib/source/stm32f30x_misc.c" type="1"/>
+    <File name="cmsis/core_cm4.h" path="cmsis/core_cm4.h" type="1"/>
+    <File name="FreeRTOS/Include/mpu_wrappers.h" path="FreeRTOS/Include/mpu_wrappers.h" type="1"/>
+    <File name="STM32303C_EVAL/stm32_eval_legacy.h" path="STM32303C_EVAL/stm32_eval_legacy.h" type="1"/>
+    <File name="FreeRTOS/Source/stream_buffer.c" path="FreeRTOS/Source/stream_buffer.c" type="1"/>
+    <File name="cmsis_lib/include/stm32f30x_tim.h" path="cmsis_lib/include/stm32f30x_tim.h" type="1"/>
+    <File name="FreeRTOS/Portable/port.c" path="FreeRTOS/Portable/port.c" type="1"/>
+    <File name="cmsis_lib/include/stm32f30x_rcc.h" path="cmsis_lib/include/stm32f30x_rcc.h" type="1"/>
+    <File name="FreeRTOS/Include" path="" type="2"/>
+    <File name="FreeRTOS/Include/semphr.h" path="FreeRTOS/Include/semphr.h" type="1"/>
+    <File name="FreeRTOS/Include/FreeRTOSConfig.h" path="FreeRTOS/Include/FreeRTOSConfig.h" type="1"/>
+    <File name="FreeRTOS/Include/croutine.h" path="FreeRTOS/Include/croutine.h" type="1"/>
+    <File name="cmsis_lib/source" path="" type="2"/>
+    <File name="FreeRTOS/Source/croutine.c" path="FreeRTOS/Source/croutine.c" type="1"/>
+    <File name="cmsis_lib/include/stm32f30x_i2c.h" path="cmsis_lib/include/stm32f30x_i2c.h" type="1"/>
+    <File name="FreeRTOS/Include/stack_macros.h" path="FreeRTOS/Include/stack_macros.h" type="1"/>
+    <File name="FreeRTOS/Include/projdefs.h" path="FreeRTOS/Include/projdefs.h" type="1"/>
+    <File name="FreeRTOS/Source/list.c" path="FreeRTOS/Source/list.c" type="1"/>
+    <File name="cmsis_boot/system_stm32f30x.h" path="cmsis_boot/system_stm32f30x.h" type="1"/>
+    <File name="FreeRTOS/Source/timers.c" path="FreeRTOS/Source/timers.c" type="1"/>
+    <File name="FreeRTOS/Source" path="" type="2"/>
+    <File name="FreeRTOS/Include/StackMacros.h" path="FreeRTOS/Include/StackMacros.h" type="1"/>
+    <File name="cmsis_lib/include/stm32f30x_misc.h" path="cmsis_lib/include/stm32f30x_misc.h" type="1"/>
+    <File name="FreeRTOS/Include/message_buffer.h" path="FreeRTOS/Include/message_buffer.h" type="1"/>
+    <File name="cmsis_lib/include/stm32f30x_usart.h" path="cmsis_lib/include/stm32f30x_usart.h" type="1"/>
+    <File name="FreeRTOS/Include/event_groups.h" path="FreeRTOS/Include/event_groups.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f30x_spi.c" path="cmsis_lib/source/stm32f30x_spi.c" type="1"/>
+    <File name="FreeRTOS/Include/task.h" path="FreeRTOS/Include/task.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f30x_syscfg.c" path="cmsis_lib/source/stm32f30x_syscfg.c" type="1"/>
+    <File name="cmsis_boot/stm32f30x.h" path="cmsis_boot/stm32f30x.h" type="1"/>
+    <File name="cmsis/core_cmInstr.h" path="cmsis/core_cmInstr.h" type="1"/>
+    <File name="FreeRTOS/Include/portable.h" path="FreeRTOS/Include/portable.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f30x_i2c.c" path="cmsis_lib/source/stm32f30x_i2c.c" type="1"/>
+    <File name="cmsis_lib/include/stm32f30x_syscfg.h" path="cmsis_lib/include/stm32f30x_syscfg.h" type="1"/>
+    <File name="STM32303C_EVAL/stm32303c_eval.c" path="STM32303C_EVAL/stm32303c_eval.c" type="1"/>
+    <File name="FreeRTOS/Portable" path="" type="2"/>
+    <File name="STM32303C_EVAL" path="" type="2"/>
+    <File name="cmsis_lib/source/stm32f30x_tim.c" path="cmsis_lib/source/stm32f30x_tim.c" type="1"/>
+    <File name="cmsis_lib/include/stm32f30x_spi.h" path="cmsis_lib/include/stm32f30x_spi.h" type="1"/>
+    <File name="FreeRTOS/Portable/portmacro.h" path="FreeRTOS/Portable/portmacro.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f30x_gpio.c" path="cmsis_lib/source/stm32f30x_gpio.c" type="1"/>
+    <File name="cmsis" path="" type="2"/>
+    <File name="cmsis_lib" path="" type="2"/>
+    <File name="FreeRTOS/Include/mpu_prototypes.h" path="FreeRTOS/Include/mpu_prototypes.h" type="1"/>
+    <File name="FreeRTOS/Include/list.h" path="FreeRTOS/Include/list.h" type="1"/>
+    <File name="FreeRTOS/Include/stream_buffer.h" path="FreeRTOS/Include/stream_buffer.h" type="1"/>
+    <File name="FreeRTOS/Source/event_groups.c" path="FreeRTOS/Source/event_groups.c" type="1"/>
+    <File name="cmsis_lib/include" path="" type="2"/>
+    <File name="cmsis_boot/system_stm32f30x_temp.c" path="cmsis_boot/system_stm32f30x_temp.c" type="1"/>
+    <File name="FreeRTOS/Source/heap_2.c" path="FreeRTOS/Source/heap_2.c" type="1"/>
+    <File name="FreeRTOS" path="" type="2"/>
+    <File name="cmsis_lib/source/stm32f30x_usart.c" path="cmsis_lib/source/stm32f30x_usart.c" type="1"/>
+    <File name="cmsis_lib/source/stm32f30x_rcc.c" path="cmsis_lib/source/stm32f30x_rcc.c" type="1"/>
+    <File name="main.c" path="main.c" type="1"/>
+    <File name="FreeRTOS/Include/queue.h" path="FreeRTOS/Include/queue.h" type="1"/>
+    <File name="STM32303C_EVAL/stm32303c_eval.h" path="STM32303C_EVAL/stm32303c_eval.h" type="1"/>
+  </Files>
+</Project>
